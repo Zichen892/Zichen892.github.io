@@ -54,356 +54,919 @@
 								<div class="inner">
 
 									<section>
-										<h3 class="major">Text</h3>
-										<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-										This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-										This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-										<h4>Blockquote</h4>
-										<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-										<h4>Preformatted</h4>
-										<pre><code>i = 0;
-
-while (!deck.isInOrder()) {
-  print 'Iteration ' + i;
-  deck.shuffle();
-  i++;
-}
-
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-									</section>
-
-									<section>
-										<h3 class="major">Lists</h3>
-										<div class="row">
-											<div class="col-6 col-12-medium">
-												<h4>Unordered</h4>
-												<ul>
-													<li>Dolor pulvinar etiam.</li>
-													<li>Sagittis adipiscing.</li>
-													<li>Felis enim feugiat.</li>
-												</ul>
-												<h4>Alternate</h4>
-												<ul class="alt">
-													<li>Dolor pulvinar etiam.</li>
-													<li>Sagittis adipiscing.</li>
-													<li>Felis enim feugiat.</li>
-												</ul>
+										<p>The
+											objective of this work is to provide a database management system for a new
+											application called Treat Your Pet. This new idea seeks to provide customized
+											affordable services to pet owners all in one platform where they can choose
+											their provider based on the fit and ratings from other customers. The database
+											designed and implemented, allocates all the service providers and pet owners'
+											information for an efficient matching for both parties in this new prolific
+											market in the United States. Without an integral system for this industry,
+											people were having difficulties finding special pet services such as urgent pet
+											care, transportation, and so on. Also, service providers do not have access to
+											the entire market due to the information gap. Therefore, a database management
+											system was needed to connect service providers and customers. This database
+											management system will not only bridge the mentioned gap but also benefits
+											service providers with data analysis by retrieving and analyzing information to
+											improve their business performance. </p>
+											
+											<p>The database was modeled relying on data provided by pet owners and service
+											providers. The main implementation consists of a relational database following
+											the right protocols for an efficient system. The design of it starts with EER and
+											UML conceptual models. Then we mapped the conceptual model to the relational
+											data model, which focuses on reducing the system redundancy and better managing
+											the database in the future by normalizing the structure. Finally, we
+											implemented in MySQL a relational database with the product of previous steps. <span
+											class=GramE>Additionally</span> to this, we created a proof-of-concept of
+											specific parts of the data model leveraging NoSQL database systems with a
+											document-based MongoDB system and graph-based Neo4j database. </p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:-.1pt'>This
+											database system has three main achievements based on system performance,
+											business analysis, and social networking. The system provided an efficient way
+											to allocate all sources in the pet service industry, which reduced the gap
+											between demand and supply. Also, by the connection with open-source language
+											Python, data analysis can be provided in a timely manner to service providers <span
+											class=GramE>in order to</span> evaluate their performance on price, service
+											hours, rating, etc. Lastly, with the implementation in Neo4j, we <span
+											class=GramE>are able to</span> implement a social network aspect to the
+											application that will provide a sense of community to customers with an
+											efficient way of processing and querying information. </p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:-.1pt'><span
+											style='mso-spacerun:yes'>   </span></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'><o:p>&nbsp;</o:p></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'><o:p>&nbsp;</o:p></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'><o:p>&nbsp;</o:p></p>
+											
+											<h1 style='margin-left:.05pt;text-indent:-.15pt'><span style='font-size:14.0pt;
+											font-family:"Times New Roman",serif'>I. Introduction<o:p></o:p></span></h1>
+											
+											<p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:-.1pt'>New
+											generations are deciding not to have children and instead, adopted a tendency
+											to get pets. This has been a boom in the pet supplies industry as there is a
+											whole new market for more human-like services for pets (<span class=SpellE><span
+											class=GramE>eg</span></span> daycare, sitting, hotels, <span class=SpellE>etc</span>).
+											In 2020, pet industry sales exceeded $100 <span class=GramE>billion</span> and
+											it is expected to triple in the near future.<a style='mso-footnote-id:ftn1'
+											href="#_ftn1" name="_ftnref1" title=""><sup><span style='mso-special-character:
+											footnote'><![if !supportFootnotes]><sup><span style='font-size:12.0pt;
+											font-family:"Times New Roman",serif;mso-fareast-font-family:"Times New Roman";
+											position:relative;top:.5pt;mso-text-raise:-.5pt;mso-ansi-language:EN-US;
+											mso-fareast-language:EN-US;mso-bidi-language:AR-SA'>[1]</span></sup><![endif]></span></sup></a><span
+											style='mso-spacerun:yes'> </span>Given the pandemic and people’s busy agenda,
+											having the opportunity to order services for dogs online is becoming critically
+											important for this market. Over the lockdowns, pet owners shopping online
+											increased by almost 20% and this is a trend that will continue. That is the
+											reason why providing a centralized app that connects pet services and supplies
+											with pet owners is so important. Our project is the start of this by designing
+											a database for the application that would be offered in the US market. The main
+											goal of the APP would be to provide customized affordable services to pet
+											owners all in one platform where they can choose their provider based on the
+											fit and ratings from other customers. </p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'><b
+											style='mso-bidi-font-weight:normal'>Requirements: <o:p></o:p></b></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:-.1pt;
+											line-height:115%'>To use the app, a pet owner needs to create an account and
+											provide information about themself (full name, birth date and email account,
+											phone number and address). A pet owner can have several pets associated with
+											their account and requires <span class=GramE>to report</span> at least one.
+											From the pet, it is required to store name, type of pet, breed, birth date,
+											brand <span class=GramE>of<span style='mso-spacerun:yes'>  </span>food</span>,
+											any medical issues (can be multiple), among others. It is also required for a
+											service provider to create a business account. This type of account is
+											available for individuals and businesses. For both types of business accounts,
+											we want to capture a short introduction/biography. For persons (individuals)
+											such as dog walkers, it is required to provide full name, phone number, e-mail,
+											among others. For businesses, it is required to store business certifications,
+											addresses (can be multiple in this case), phone number(s), <span class=GramE>e-mail..</span>
+											A service provider can provide multiple service types. When a service is hired
+											through the app, it is important to store information regarding service type, <span
+											class=GramE>time</span> and date of it, as well as the price agreed. Also, when
+											a service is provided, we would like to obtain a client’s rating of the service
+											to show later in the app. There is also the functionality of customer earning
+											reward points every time that a service is hired.</p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:-.1pt;
+											line-height:115%'><o:p>&nbsp;</o:p></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:-.1pt;
+											line-height:115%'><o:p>&nbsp;</o:p></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:-.1pt;
+											line-height:115%'><o:p>&nbsp;</o:p></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:-.1pt;
+											line-height:115%'><o:p>&nbsp;</o:p></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:-.1pt;
+											line-height:115%'><o:p>&nbsp;</o:p></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:-.1pt;
+											line-height:115%'><o:p>&nbsp;</o:p></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:-.1pt;
+											line-height:115%'><o:p>&nbsp;</o:p></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:-.1pt;
+											line-height:115%'><o:p>&nbsp;</o:p></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:-.1pt;
+											line-height:115%'><o:p>&nbsp;</o:p></p>
+											
+											<h1 style='margin-left:.05pt;text-indent:-.15pt'><span style='font-size:14.0pt;
+											font-family:"Times New Roman",serif'>II. Conceptual Data Modeling <o:p></o:p></span></h1>
+											
+											<p class=MsoNormal style='margin-left:.05pt;text-indent:-.15pt'><b
+											style='mso-bidi-font-weight:normal'><span style='font-size:14.0pt'>EER<o:p></o:p></span></b></p>
+											
+											<p class=MsoNormal style='margin-left:.05pt;text-indent:-.15pt'><b
+											style='mso-bidi-font-weight:normal'><span style='font-size:14.0pt;mso-no-proof:
+											yes'><!--[if gte vml 1]><v:shapetype id="_x0000_t75" coordsize="21600,21600"
+											 o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f"
+											 stroked="f">
+											 <v:stroke joinstyle="miter"/>
+											 <v:formulas>
+											  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+											  <v:f eqn="sum @0 1 0"/>
+											  <v:f eqn="sum 0 0 @1"/>
+											  <v:f eqn="prod @2 1 2"/>
+											  <v:f eqn="prod @3 21600 pixelWidth"/>
+											  <v:f eqn="prod @3 21600 pixelHeight"/>
+											  <v:f eqn="sum @0 0 1"/>
+											  <v:f eqn="prod @6 1 2"/>
+											  <v:f eqn="prod @7 21600 pixelWidth"/>
+											  <v:f eqn="sum @8 21600 0"/>
+											  <v:f eqn="prod @7 21600 pixelHeight"/>
+											  <v:f eqn="sum @10 21600 0"/>
+											 </v:formulas>
+											 <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+											 <o:lock v:ext="edit" aspectratio="t"/>
+											</v:shapetype><v:shape id="image20.png" o:spid="_x0000_i1045" type="#_x0000_t75"
+											 style='width:385pt;height:439pt;visibility:visible;mso-wrap-style:square'>
+											 <v:imagedata src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image001.png" o:title=""/>
+											</v:shape><![endif]--><![if !vml]><img width=385 height=439
+											src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image002.jpg" v:shapes="image20.png"><![endif]></span></b><b
+											style='mso-bidi-font-weight:normal'><span style='font-size:14.0pt'><o:p></o:p></span></b></p>
+											
+											<p class=MsoNormal style='margin-left:.05pt;text-indent:-.15pt'><b
+											style='mso-bidi-font-weight:normal'><span style='font-size:14.0pt'><o:p>&nbsp;</o:p></span></b></p>
+											
+											<p class=MsoNormal style='margin-left:.05pt;text-indent:-.15pt'><b
+											style='mso-bidi-font-weight:normal'><span style='font-size:14.0pt'><o:p>&nbsp;</o:p></span></b></p>
+											
+											<p class=MsoNormal style='margin-left:.05pt;text-indent:-.15pt'><b
+											style='mso-bidi-font-weight:normal'><span style='font-size:14.0pt'><o:p>&nbsp;</o:p></span></b></p>
+											
+											<p class=MsoNormal style='margin-left:.05pt;text-indent:-.15pt'><b
+											style='mso-bidi-font-weight:normal'><span style='font-size:14.0pt'><o:p>&nbsp;</o:p></span></b></p>
+											
+											<p class=MsoNormal style='margin-left:.05pt;text-indent:-.15pt'><b
+											style='mso-bidi-font-weight:normal'><span style='font-size:14.0pt'><o:p>&nbsp;</o:p></span></b></p>
+											
+											<p class=MsoNormal style='margin-left:.05pt;text-indent:-.15pt'><b
+											style='mso-bidi-font-weight:normal'><span style='font-size:14.0pt'><o:p>&nbsp;</o:p></span></b></p>
+											
+											<p class=MsoNormal style='margin-left:.05pt;text-indent:-.15pt'><b
+											style='mso-bidi-font-weight:normal'><span style='font-size:14.0pt'><o:p>&nbsp;</o:p></span></b></p>
+											
+											<p class=MsoNormal style='margin-left:.05pt;text-indent:-.15pt'><b
+											style='mso-bidi-font-weight:normal'><span style='font-size:14.0pt'><o:p>&nbsp;</o:p></span></b></p>
+											
+											<p class=MsoNormal style='margin-left:.05pt;text-indent:-.15pt'><b
+											style='mso-bidi-font-weight:normal'><span style='font-size:14.0pt'><o:p>&nbsp;</o:p></span></b></p>
+											
+											<p class=MsoNormal style='margin-left:.05pt;text-indent:-.15pt'><b
+											style='mso-bidi-font-weight:normal'><span style='font-size:14.0pt'><o:p>&nbsp;</o:p></span></b></p>
+											
+											<p class=MsoNormal style='margin-left:.05pt;text-indent:-.15pt'><b
+											style='mso-bidi-font-weight:normal'><span style='font-size:14.0pt'>UML<o:p></o:p></span></b></p>
+											
+											<p class=MsoNormal style='margin-left:.05pt;text-indent:-.15pt'><b
+											style='mso-bidi-font-weight:normal'><span style='font-size:14.0pt;mso-no-proof:
+											yes'><!--[if gte vml 1]><v:shape id="image19.png" o:spid="_x0000_i1044" type="#_x0000_t75"
+											 style='width:373pt;height:552pt;visibility:visible;mso-wrap-style:square'>
+											 <v:imagedata src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image003.png" o:title=""/>
+											</v:shape><![endif]--><![if !vml]><img width=373 height=552
+											src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image004.jpg" v:shapes="image19.png"><![endif]></span></b><b
+											style='mso-bidi-font-weight:normal'><span style='font-size:14.0pt'><o:p></o:p></span></b></p>
+											
+											<p class=MsoNormal style='margin-left:.05pt;text-indent:-.15pt'><b
+											style='mso-bidi-font-weight:normal'><span style='font-size:14.0pt'><o:p>&nbsp;</o:p></span></b></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'><o:p>&nbsp;</o:p></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'><o:p>&nbsp;</o:p></p>
+											
+											<h1 style='margin-left:.05pt;text-indent:-.15pt'><span style='font-size:14.0pt;
+											font-family:"Times New Roman",serif'>III. Mapping Conceptual Model to
+											Relational Model</span></h1>
+											
+											<p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:-.1pt;
+											line-height:115%;mso-list:l2 level1 lfo2'><![if !supportLists]><span
+											style='font-family:"Arial",sans-serif;mso-fareast-font-family:Arial'><span
+											style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</span></span></span><![endif]><span class=SpellE><span class=GramE><b
+											style='mso-bidi-font-weight:normal'>PetOwner</b></span></span><span
+											class=GramE>(</span><span class=SpellE><u>UserID</u></span>, Birthdate, <span
+											class=SpellE>OwnerEmail</span>, <span class=SpellE>OwnerPhoneNumber</span>,<span
+											style='mso-spacerun:yes'>  </span><span class=SpellE>RewardPoints</span>, <span
+											class=SpellE>OwnerAddress</span>, <span class=SpellE>OwnerFirstName</span>, <span
+											class=SpellE>OwnerLastName</span>)<span style='font-family:"Arial",sans-serif;
+											mso-fareast-font-family:Arial'><o:p></o:p></span></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:-.1pt;
+											line-height:115%;mso-list:l2 level1 lfo2'><![if !supportLists]><span
+											style='font-family:"Arial",sans-serif;mso-fareast-font-family:Arial'><span
+											style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</span></span></span><![endif]><span class=GramE><b style='mso-bidi-font-weight:
+											normal'>Pet</b>(</span><span class=SpellE><u>PetName</u></span>, <span
+											class=SpellE><i style='mso-bidi-font-style:normal'><u>UserID</u></i></span>, <span
+											class=SpellE>PetType</span>, Breed, <span class=SpellE>PetBirthDate</span>,
+											Weight, <span class=SpellE>FoodBrand</span>, Socializing)<span
+											style='font-family:"Arial",sans-serif;mso-fareast-font-family:Arial'><o:p></o:p></span></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:-.1pt;
+											line-height:115%;mso-list:l2 level2 lfo2'><![if !supportLists]><span
+											style='mso-list:Ignore'>○<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</span></span><![endif]><span class=SpellE>UserID</span> is a foreign key from <span
+											class=SpellE>PetOwner</span>, declared as NOT NULL</p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:-.1pt;
+											line-height:115%;mso-list:l2 level1 lfo2'><![if !supportLists]><span
+											style='font-family:"Arial",sans-serif;mso-fareast-font-family:Arial'><span
+											style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</span></span></span><![endif]><span class=SpellE><span class=GramE><b
+											style='mso-bidi-font-weight:normal'>MedIssue</b></span></span><span
+											class=GramE>(</span><span class=SpellE><i style='mso-bidi-font-style:normal'><u>PetName</u></i></span>,
+											<span class=SpellE><i style='mso-bidi-font-style:normal'><u>UserID</u></i></span><i
+											style='mso-bidi-font-style:normal'>, </i><span class=SpellE><u>MedIssue</u></span>)<span
+											style='font-family:"Arial",sans-serif;mso-fareast-font-family:Arial'><o:p></o:p></span></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:-.1pt;
+											line-height:115%;mso-list:l2 level2 lfo2'><![if !supportLists]><span
+											style='mso-list:Ignore'>○<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</span></span><![endif]><span class=SpellE>UserID</span> and <span
+											class=SpellE>PetName</span> are foreign keys referring to same name variables
+											from <span class=SpellE>PetOwner</span> and Pet respectively, declared as NOT
+											NULL</p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:-.1pt;
+											line-height:115%;mso-list:l2 level1 lfo2'><![if !supportLists]><span
+											style='font-family:"Arial",sans-serif;mso-fareast-font-family:Arial'><span
+											style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</span></span></span><![endif]><span class=GramE><b style='mso-bidi-font-weight:
+											normal'>Service</b>(</span><span class=SpellE><u>TypeID</u></span>, <span
+											class=SpellE>TypeDescription</span>)<span style='font-family:"Arial",sans-serif;
+											mso-fareast-font-family:Arial'><o:p></o:p></span></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:-.1pt;
+											line-height:115%;mso-list:l2 level1 lfo2'><![if !supportLists]><span
+											style='font-family:"Arial",sans-serif;mso-fareast-font-family:Arial'><span
+											style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</span></span></span><![endif]><span class=SpellE><span class=GramE><b
+											style='mso-bidi-font-weight:normal'>ServiceProvider</b></span></span><span
+											class=GramE>(</span><span class=SpellE><u>ProviderID</u></span>, Bio )<span
+											style='font-family:"Arial",sans-serif;mso-fareast-font-family:Arial'><o:p></o:p></span></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:-.1pt;
+											line-height:115%;mso-list:l2 level1 lfo2'><![if !supportLists]><span
+											style='font-family:"Arial",sans-serif;mso-fareast-font-family:Arial'><span
+											style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</span></span></span><![endif]><span class=GramE><b style='mso-bidi-font-weight:
+											normal'>Business</b>(</span><span class=SpellE><i style='mso-bidi-font-style:
+											normal'><u>ProviderID</u></i></span>, <span class=SpellE>ProviderName</span>, <span
+											class=SpellE>BusinessCertificationID</span>, <span class=SpellE>BusinessEmail</span>)<span
+											style='font-family:"Arial",sans-serif;mso-fareast-font-family:Arial'><o:p></o:p></span></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:-.1pt;
+											line-height:115%;mso-list:l2 level2 lfo2'><![if !supportLists]><span
+											style='mso-list:Ignore'>○<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</span></span><![endif]><span class=SpellE>ProviderID</span> is a foreign key
+											referring to <span class=SpellE>ProviderID</span> on <span class=SpellE>ServiceProvider</span>,
+											declared as NOT NULL</p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:-.1pt;
+											line-height:115%;mso-list:l2 level1 lfo2'><![if !supportLists]><span
+											style='font-family:"Arial",sans-serif;mso-fareast-font-family:Arial'><span
+											style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</span></span></span><![endif]><span class=SpellE><span class=GramE><b
+											style='mso-bidi-font-weight:normal'>BusinessAddress</b></span></span><span
+											class=GramE>(</span><span class=SpellE><i style='mso-bidi-font-style:normal'><u>ProviderID</u></i></span>,
+											<span class=SpellE><u>BusinessAddress</u></span>)<span style='font-family:"Arial",sans-serif;
+											mso-fareast-font-family:Arial'><o:p></o:p></span></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:-.1pt;
+											line-height:115%;mso-list:l2 level2 lfo2'><![if !supportLists]><span
+											style='mso-list:Ignore'>○<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</span></span><![endif]><span class=SpellE>ProviderID</span> is a <span
+											class=SpellE>foregin</span> key referring to <span class=SpellE>ProviderID</span>
+											on Business table, declared as NOT NULL</p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:-.1pt;
+											line-height:115%;mso-list:l2 level1 lfo2'><![if !supportLists]><span
+											style='font-family:"Arial",sans-serif;mso-fareast-font-family:Arial'><span
+											style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</span></span></span><![endif]><span class=SpellE><span class=GramE><b
+											style='mso-bidi-font-weight:normal'>BusinessPhoneNumber</b></span></span><span
+											class=GramE>(</span><span class=SpellE><i style='mso-bidi-font-style:normal'><u>ProviderID</u></i></span>,
+											<span class=SpellE><u>BusinessPhoneNumber</u></span>)<span style='font-family:
+											"Arial",sans-serif;mso-fareast-font-family:Arial'><o:p></o:p></span></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:-.1pt;
+											line-height:115%;mso-list:l2 level2 lfo2'><![if !supportLists]><span
+											style='mso-list:Ignore'>○<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</span></span><![endif]><span class=SpellE>ProviderID</span> is a <span
+											class=SpellE>foregin</span> key referring to <span class=SpellE>ProviderID</span>
+											on Business table, declared as NOT NULL</p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:-.1pt;
+											line-height:115%;mso-list:l2 level1 lfo2'><![if !supportLists]><span
+											style='font-family:"Arial",sans-serif;mso-fareast-font-family:Arial'><span
+											style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</span></span></span><![endif]><span class=GramE><b style='mso-bidi-font-weight:
+											normal'>Individual</b>(</span><span class=SpellE><i style='mso-bidi-font-style:
+											normal'><u>ProviderID</u></i></span>, <span class=SpellE>Cartype</span>, <span
+											class=SpellE>IndividualEmail</span>, <span class=SpellE>IndividualAddress</span>,
+											<span class=SpellE>DriverLicense</span>, <span class=SpellE>IndividualFirstName</span>,
+											<span class=SpellE>IndividualLastName</span>, <span class=SpellE>IndividualPhoneNumber</span>)<span
+											style='font-family:"Arial",sans-serif;mso-fareast-font-family:Arial'><o:p></o:p></span></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:-.1pt;
+											line-height:115%;mso-list:l2 level2 lfo2'><![if !supportLists]><span
+											style='mso-list:Ignore'>○<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</span></span><![endif]><span class=SpellE>ProviderID</span> is a foreign key
+											referring to <span class=SpellE>ProviderID</span> on <span class=SpellE>ServiceProvider</span>
+											table, declared as NOT NULL</p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:-.1pt;
+											line-height:115%;mso-list:l2 level1 lfo2'><![if !supportLists]><span
+											style='font-family:"Arial",sans-serif;mso-fareast-font-family:Arial'><span
+											style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</span></span></span><![endif]><span class=GramE><b style='mso-bidi-font-weight:
+											normal'>Hires</b>(</span><span class=SpellE><u>ServiceID</u></span>, <span
+											class=SpellE><i style='mso-bidi-font-style:normal'>ProviderID</i></span><i
+											style='mso-bidi-font-style:normal'>, <span class=SpellE>PetName</span>, <span
+											class=SpellE>UserID</span>, <span class=SpellE>TypeID</span></i>, Price,
+											Rating, <span class=SpellE>DateTime</span>)<span style='font-family:"Arial",sans-serif;
+											mso-fareast-font-family:Arial'><o:p></o:p></span></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:-.1pt;
+											line-height:115%;mso-list:l0 level1 lfo3'><![if !supportLists]><span
+											style='mso-list:Ignore'>○<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</span></span><![endif]><span class=SpellE>ProviderID</span>, <span
+											class=SpellE>UserID</span>, <span class=SpellE>PetName</span> and <span
+											class=SpellE>TypeID</span> are foreign keys referring to original variables
+											with same names in tables <span class=SpellE>ServiceProvider</span>, <span
+											class=SpellE>PetOwner</span>, Pet, and Service accordingly, all declared as NOT
+											NULL </p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:-.1pt;
+											line-height:115%'><b style='mso-bidi-font-weight:normal'>Note</b><i
+											style='mso-bidi-font-style:normal'>:</i><u> Underlined variables are primary
+											keys</u><i style='mso-bidi-font-style:normal'> </i>and the ones in <i
+											style='mso-bidi-font-style:normal'>italics are foreign keys<o:p></o:p></i></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:-.1pt;
+											line-height:115%'><b style='mso-bidi-font-weight:normal'>Loss of
+											semantics/limitations of the model:</b></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:-.1pt;
+											line-height:115%;mso-list:l1 level1 lfo1'><![if !supportLists]><span
+											style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</span></span><![endif]>Cannot ensure that a Pet Owner has at least one Pet
+											(minimum cardinality of 1 in relationship with Pet)</p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:-.1pt;
+											line-height:115%;mso-list:l1 level1 lfo1'><![if !supportLists]><span
+											style='mso-list:Ignore'>●<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											</span></span><![endif]>Cannot guarantee there is no overlap of Business and
+											Individual table even though there shouldn’t be (specialization implementation)</p>
+											
+											<h1 style='margin-left:.05pt;text-indent:-.15pt'><span style='font-size:14.0pt;
+											font-family:"Times New Roman",serif'>IV. Implementation of Relation Model via
+											MySQL and NoSQL<o:p></o:p></span></h1>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'>Implementation of
+											the relational model was done locally using MySQL. The following are some
+											queries that provide relevant information regarding the database:</p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'><b
+											style='mso-bidi-font-weight:normal'>Query 1:<span style='mso-spacerun:yes'> 
+											</span>Who has hired more than once a service and at least one of those was dog
+											meal delivery that lives in California?<span style='mso-spacerun:yes'>  
+											</span><o:p></o:p></b></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'>SELECT <span
+											class=GramE>H.USERID</span>, AGG.OWNERFIRSTNAME, AGG.OWNERLASTNAME, COUNT(*) AS
+											NUMBER_SERVICES_HIRED</p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'>FROM HIRES AS H</p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'>INNER JOIN (SELECT
+											USERID, OWNERFIRSTNAME, OWNERLASTNAME, SUBSTRING_<span class=GramE>INDEX(</span>SUBSTRING_INDEX(OWNERADDRESS,
+											',', -2),',',1) AS STATE FROM PETOWNER ) AS AGG ON H.USERID = AGG.USERID</p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'>INNER JOIN SERVICE
+											AS S ON <span class=GramE>S.TYPEID</span> = H.TYPEID</p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'>WHERE AGG.STATE =
+											&quot;CA&quot; AND <span class=GramE>S.TYPEDESCRIPTION</span> = &quot;Dog meal
+											delivery&quot;</p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'>GROUP BY <span
+											class=GramE>H.USERID</span>;</p>
+											
+											<p class=MsoNormal align=center style='margin-left:0in;text-align:center;
+											text-indent:-.1pt'><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+											 id="image3.png" o:spid="_x0000_i1043" type="#_x0000_t75" style='width:243pt;
+											 height:38pt;visibility:visible;mso-wrap-style:square'>
+											 <v:imagedata src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image005.png" o:title=""/>
+											</v:shape><![endif]--><![if !vml]><img width=243 height=38
+											src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image006.jpg" v:shapes="image3.png"><![endif]></span></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'><o:p>&nbsp;</o:p></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'><o:p>&nbsp;</o:p></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'><b
+											style='mso-bidi-font-weight:normal'>Query 2: Who own pets with medical <span
+											class=SpellE><span class=GramE>issues“</span>Anxiety</span>” and “Obesity”?
+											(Show pets name, owner’s name and all their medical issues)<o:p></o:p></b></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'>SELECT <span
+											class=GramE>PO.OWNERFIRSTNAME</span>, PO.OWNERLASTNAME, P.PETNAME, M.MEDISSUE
+											FROM PETOWNER AS PO, PET AS P, MEDISSUE AS M</p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'>WHERE <span
+											class=GramE>PO.USERID</span> = P.USERID AND P.PETNAME = M.PETNAME</p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'>AND <span
+											class=GramE>P.USERID</span> = M.USERID AND EXISTS (SELECT * FROM MEDISSUE M2</p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'>WHERE MEDISSUE =
+											&quot;Anxiety&quot; AND <span class=GramE>M.PETNAME</span> = M2.PETNAME AND
+											PO.USERID = M2.USERID) AND EXISTS (SELECT * FROM MEDISSUE M2 WHERE MEDISSUE =
+											&quot;Obesity&quot; AND M.PETNAME = M2.PETNAME AND PO.USERID = M2.USERID);</p>
+											
+											<p class=MsoNormal align=center style='margin-left:0in;text-align:center;
+											text-indent:-.1pt'><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+											 id="image8.png" o:spid="_x0000_i1042" type="#_x0000_t75" style='width:252pt;
+											 height:66pt;visibility:visible;mso-wrap-style:square'>
+											 <v:imagedata src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image007.png" o:title=""/>
+											</v:shape><![endif]--><![if !vml]><img width=252 height=66
+											src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image008.jpg" v:shapes="image8.png"><![endif]></span></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'><o:p>&nbsp;</o:p></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'><b
+											style='mso-bidi-font-weight:normal'>Query 3: What type of services have not <span
+											class=GramE>yet<span style='mso-spacerun:yes'>  </span>been</span> requested? <o:p></o:p></b></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'>SELECT
+											TYPEDESCRIPTION FROM SERVICE AS S</p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'>WHERE NOT EXISTS
+											(SELECT * FROM HIRES AS H WHERE <span class=GramE>S.TYPEID</span> = H.TYPEID);</p>
+											
+											<p class=MsoNormal align=center style='margin-left:0in;text-align:center;
+											text-indent:-.1pt'><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+											 id="image9.png" o:spid="_x0000_i1041" type="#_x0000_t75" style='width:100pt;
+											 height:36pt;visibility:visible;mso-wrap-style:square'>
+											 <v:imagedata src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image009.png" o:title=""/>
+											</v:shape><![endif]--><![if !vml]><img width=100 height=36
+											src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image010.jpg" v:shapes="image9.png"><![endif]></span></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'><b
+											style='mso-bidi-font-weight:normal'>Query 4: What is the number of services
+											hired and average spend of dog owners by number of pets owned? Sort by number
+											of services and avg price descending<o:p></o:p></b></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'>SELECT <span
+											class=GramE>P.USERID</span>, AGG.PETS_OWNED, COUNT(*) AS NUMBER_SERVICES_HIRED,
+											AVG(PRICE) AS AVG_PRICE</p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'>FROM HIRES AS H
+											INNER JOIN PET AS P ON <span class=GramE>H.PETNAME</span> = P.PETNAME AND
+											H.USERID = P.USERID LEFT JOIN (SELECT USERID, COUNT(*) AS PETS_OWNED FROM PET
+											GROUP BY USERID) AS AGG ON P.USERID = AGG.USERID WHERE P.PETTYPE =
+											&quot;Dog&quot;</p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'>GROUP BY <span
+											class=GramE>P.USERID</span></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'>ORDER BY
+											NUMBER_SERVICES_HIRED DESC, AVG_PRICE <span class=GramE>DESC;</span></p>
+											
+											<p class=MsoNormal align=center style='margin-left:0in;text-align:center;
+											text-indent:-.1pt'><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+											 id="_x0000_i1040" type="#_x0000_t75" style='width:185pt;height:127pt;
+											 visibility:visible;mso-wrap-style:square'>
+											 <v:imagedata src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image011.png" o:title=""
+											  cropbottom="31714f"/>
+											</v:shape><![endif]--><![if !vml]><img width=185 height=127
+											src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image012.jpg" v:shapes="_x0000_i1040"><![endif]><!--[if gte vml 1]><v:shape
+											 id="image16.png" o:spid="_x0000_i1039" type="#_x0000_t75" style='width:190pt;
+											 height:126pt;visibility:visible;mso-wrap-style:square'>
+											 <v:imagedata src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image011.png" o:title=""
+											  croptop="33083f"/>
+											</v:shape><![endif]--><![if !vml]><img width=190 height=126
+											src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image013.jpg" v:shapes="image16.png"><![endif]></span></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'><b
+											style='mso-bidi-font-weight:normal'>Query 5: What are the businesses providing
+											services to the highest reward point holder? Only business<o:p></o:p></b></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'>SELECT DISTINCT <span
+											class=GramE>B.PROVIDERNAME</span> FROM HIRES AS H, BUSINESS AS B</p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'>WHERE <span
+											class=GramE>H.PROVIDERID</span> = B.PROVIDERID AND H.USERID IN (SELECT USERID</p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'><span
+											style='mso-spacerun:yes'>    </span>FROM PETOWNER AS PO WHERE REWARDPOINTS
+											&gt;= ALL <span class=GramE>( SELECT</span><span
+											style='mso-spacerun:yes'>        </span>REWARDPOINTS FROM PETOWNER<span
+											style='mso-spacerun:yes'>  </span>));</p>
+											
+											<p class=MsoNormal align=center style='margin-left:0in;text-align:center;
+											text-indent:-.1pt'><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+											 id="image1.png" o:spid="_x0000_i1038" type="#_x0000_t75" style='width:74pt;
+											 height:39pt;visibility:visible;mso-wrap-style:square'>
+											 <v:imagedata src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image014.png" o:title=""/>
+											</v:shape><![endif]--><![if !vml]><img width=74 height=39
+											src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image015.jpg" v:shapes="image1.png"><![endif]></span></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:-.1pt'><b
+											style='mso-bidi-font-weight:normal'>Query 6: What are the 3 highest value
+											service transactions and their characteristics? (Show Pet owners with their
+											pets’ name, pet type sorted by their price/cost)<o:p></o:p></b></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'>SELECT <span
+											class=GramE>H.USERID</span>, H.PETNAME, P.PETTYPE, H.PRICE</p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'><span
+											style='mso-spacerun:yes'> </span>FROM HIRES AS H INNER JOIN PET AS P ON <span
+											class=GramE>H.USERID</span> = P.USERID</p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'><span
+											style='mso-spacerun:yes'> </span>WHERE <span class=GramE>H.PETNAME</span> =
+											P.PETNAME</p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'><span
+											style='mso-spacerun:yes'> </span>ORDER BY <span class=GramE>H.PRICE</span>
+											DESC;</p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'><b
+											style='mso-bidi-font-weight:normal'><span
+											style='mso-spacerun:yes'>                                                
+											</span></b><span style='font-family:"Calibri",sans-serif;mso-fareast-font-family:
+											Calibri;mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="image13.png" o:spid="_x0000_i1037"
+											 type="#_x0000_t75" style='width:113pt;height:38pt;visibility:visible;
+											 mso-wrap-style:square'>
+											 <v:imagedata src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image016.png" o:title=""/>
+											</v:shape><![endif]--><![if !vml]><img width=113 height=38
+											src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image017.jpg" v:shapes="image13.png"><![endif]></span><span
+											style='font-family:"Calibri",sans-serif;mso-fareast-font-family:Calibri'><o:p></o:p></span></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'><b
+											style='mso-bidi-font-weight:normal'>Query 7: Which is the most popular hour to
+											hire services in our app?</b></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'>SELECT
+											HOUR(DATETIME) AS HOURS, <span class=GramE>COUNT(</span>*) AS FREQUENCY</p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'>FROM HIRES GROUP
+											BY HOURS ORDER BY FREQUENCY <span class=GramE>DESC;</span></p>
+											
+											<p class=MsoNormal align=center style='margin-left:0in;text-align:center;
+											text-indent:-.1pt'><span style='font-family:"Calibri",sans-serif;mso-fareast-font-family:
+											Calibri;mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="image7.png" o:spid="_x0000_i1036"
+											 type="#_x0000_t75" style='width:87pt;height:26pt;visibility:visible;
+											 mso-wrap-style:square'>
+											 <v:imagedata src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image018.png" o:title=""/>
+											</v:shape><![endif]--><![if !vml]><img width=87 height=26
+											src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image019.jpg" v:shapes="image7.png"><![endif]></span><span
+											style='font-family:"Calibri",sans-serif;mso-fareast-font-family:Calibri'><o:p></o:p></span></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'><b
+											style='mso-bidi-font-weight:normal'>Query 8: Which business service provider
+											had offered the lower price for each type of service? <o:p></o:p></b></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'>SELECT <span
+											class=GramE>B.PROVIDERNAME</span>, S.TYPEDESCRIPTION,<span
+											style='mso-spacerun:yes'>  </span>H.PRICE </p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'>FROM HIRES AS H,
+											BUSINESS AS B, SERVICE AS S</p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'>WHERE <span
+											class=GramE>H.PROVIDERID</span> = B.PROVIDERID AND H.TYPEID = S.TYPEID AND<span
+											style='mso-spacerun:yes'>  </span>H.PRICE &lt;= ALL( SELECT H2.PRICE FROM HIRES
+											AS H2, BUSINESS AS B2 </p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'>WHERE H<span
+											class=GramE>2.TYPEID</span> = H.TYPEID AND H2.PROVIDERID = B2.PROVIDERID);</p>
+											
+											<p class=MsoNormal align=center style='margin-left:0in;text-align:center;
+											text-indent:-.1pt'><span style='font-family:"Calibri",sans-serif;mso-fareast-font-family:
+											Calibri;mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="image11.png" o:spid="_x0000_i1035"
+											 type="#_x0000_t75" style='width:128pt;height:94pt;visibility:visible;
+											 mso-wrap-style:square'>
+											 <v:imagedata src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image020.png" o:title=""/>
+											</v:shape><![endif]--><![if !vml]><img width=128 height=94
+											src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image021.jpg" v:shapes="image11.png"><![endif]></span><span
+											style='font-family:"Calibri",sans-serif;mso-fareast-font-family:Calibri'><o:p></o:p></span></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'><b
+											style='mso-bidi-font-weight:normal'>Query 9: Which business service providers
+											have at least three business locations?<o:p></o:p></b></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'>SELECT <span
+											class=GramE>P.PROVIDERNAME</span> FROM BUSINESSADDRESS B </p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'>INNER JOIN
+											BUSINESS <span class=GramE>P<span style='mso-spacerun:yes'>  </span>ON</span>
+											B.PROVIDERID = P.PROVIDERID </p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'>GROUP BY <span
+											class=GramE>B.PROVIDERID</span><span style='mso-spacerun:yes'>  </span>HAVING
+											COUNT(*) &gt;= 3</p>
+											
+											<p class=MsoNormal align=center style='margin-left:0in;text-align:center;
+											text-indent:-.1pt'><span style='font-family:"Calibri",sans-serif;mso-fareast-font-family:
+											Calibri;mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="image15.png" o:spid="_x0000_i1034"
+											 type="#_x0000_t75" style='width:56pt;height:53pt;visibility:visible;
+											 mso-wrap-style:square'>
+											 <v:imagedata src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image022.png" o:title=""/>
+											</v:shape><![endif]--><![if !vml]><img width=56 height=53
+											src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image023.jpg" v:shapes="image15.png"><![endif]></span><span
+											style='font-family:"Calibri",sans-serif;mso-fareast-font-family:Calibri'><o:p></o:p></span></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'><b
+											style='mso-bidi-font-weight:normal'>Query 10: How many services are being
+											provided per month?<o:p></o:p></b></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'>SELECT
+											MONTH(DATETIME) AS MONTHS, <span class=GramE>COUNT(</span>*) AS NUMBER_SERVICES</p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'>FROM HIRES GROUP
+											BY MONTHS ORDER BY NUMBER_SERVICES <span class=GramE>DESC;</span></p>
+											
+											<p class=MsoNormal align=center style='margin-left:0in;text-align:center;
+											text-indent:-.1pt'><span style='font-family:"Calibri",sans-serif;mso-fareast-font-family:
+											Calibri;mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="image12.png" o:spid="_x0000_i1033"
+											 type="#_x0000_t75" style='width:68pt;height:32pt;visibility:visible;
+											 mso-wrap-style:square'>
+											 <v:imagedata src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image024.png" o:title=""/>
+											</v:shape><![endif]--><![if !vml]><img width=68 height=32
+											src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image025.jpg" v:shapes="image12.png"><![endif]></span><span
+											style='font-family:"Calibri",sans-serif;mso-fareast-font-family:Calibri'><o:p></o:p></span></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'><b
+											style='mso-bidi-font-weight:normal'>Query 11: Who are the providers with an
+											average rating of at least 4 and provided a service that is more than $300?<o:p></o:p></b></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'>WITH MAIN AS
+											(SELECT H<span class=GramE>1.PROVIDERID</span>, AVG(H1.RATING) AS AVG_RATING</p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'>FROM HIRES H1
+											GROUP BY H<span class=GramE>1.PROVIDERID</span> HAVING AVG_RATING &gt;=4)</p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'>SELECT <span
+											class=GramE>M.PROVIDERID</span>, M.AVG_RATING, H2.PRICE</p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'>FROM MAIN M LEFT
+											JOIN HIRES H2 ON H<span class=GramE>2.PROVIDERID</span> = M.PROVIDERID </p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'>HAVING H<span
+											class=GramE>2.PRICE</span> &gt;=300;<b style='mso-bidi-font-weight:normal'><o:p></o:p></b></p>
+											
+											<p class=MsoNormal align=center style='margin-left:0in;text-align:center;
+											text-indent:-.1pt'><span style='font-family:"Calibri",sans-serif;mso-fareast-font-family:
+											Calibri;mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="image6.png" o:spid="_x0000_i1032"
+											 type="#_x0000_t75" style='width:88pt;height:83pt;visibility:visible;
+											 mso-wrap-style:square'>
+											 <v:imagedata src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image026.png" o:title=""/>
+											</v:shape><![endif]--><![if !vml]><img width=88 height=83
+											src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image027.jpg" v:shapes="image6.png"><![endif]></span><span
+											style='font-family:"Calibri",sans-serif;mso-fareast-font-family:Calibri'><o:p></o:p></span></p>
+											
+											<p class=MsoNormal style='margin-left:.05pt;text-indent:-.15pt'><b
+											style='mso-bidi-font-weight:normal'><span style='font-size:14.0pt'>MongoDB<o:p></o:p></span></b></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'>We implemented in
+											MongoDB Cloud 4 of the tables as collections with 10-12 documents each. Tables
+											implemented <span class=GramE>were:</span> Pet, <span class=SpellE>Petowner</span>,
+											Hires, <span class=SpellE>ServiceProvider</span>. The connection and querying <span
+											class=GramE>was</span> done in python through library <span class=SpellE>pymongo</span>.
+											Here are 3 of the queries ran: </p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'><b
+											style='mso-bidi-font-weight:normal'>Query 1: What is the total number of
+											services per type of pet? Sorted descending<o:p></o:p></b></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt;line-height:normal;
+											border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><span
+											class=SpellE><span class=GramE>db.hires</span>.aggregate</span>([{&quot;$lookup&quot;:
+											{&quot;from&quot;:&quot;pet&quot;,&quot;<span class=SpellE>localField</span>&quot;:&quot;<span
+											class=SpellE>petname</span>&quot;,&quot;<span class=SpellE>foreignField</span>&quot;:
+											&quot;<span class=SpellE>petname</span>&quot;, &quot;as&quot;: &quot;<span
+											class=SpellE>petinfo</span>&quot;}},</p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt;line-height:normal;
+											border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'>{&quot;$group<span
+											class=GramE>&quot;:{</span>&quot;_id&quot;:&quot;$<span class=SpellE>petinfo.pettype</span>&quot;,
+											&quot;count&quot;:{&quot;$sum&quot;:1}}},</p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt;line-height:normal;
+											border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><span
+											style='mso-spacerun:yes'>   </span>{&quot;$sort<span class=GramE>&quot;:{</span>&quot;count&quot;:-1}}])</p>
+											
+											<p class=MsoNormal align=center style='margin-left:0in;text-align:center;
+											text-indent:-.1pt'><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+											 id="image14.png" o:spid="_x0000_i1031" type="#_x0000_t75" style='width:158pt;
+											 height:63pt;visibility:visible;mso-wrap-style:square'>
+											 <v:imagedata src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image028.png" o:title=""/>
+											</v:shape><![endif]--><![if !vml]><img width=158 height=63
+											src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image029.jpg" v:shapes="image14.png"><![endif]></span></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt;line-height:normal;
+											border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><b
+											style='mso-bidi-font-weight:normal'>Query 2: Which pets hired services? sort by
+											the price from higher to lower<o:p></o:p></b></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt;line-height:normal;
+											border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><span
+											class=SpellE><span class=GramE>db.hires</span>.aggregate</span>([</p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt;line-height:normal;
+											border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><span
+											style='mso-spacerun:yes'>   </span>{&quot;$group<span class=GramE>&quot;:{</span>&quot;_id&quot;:&quot;$<span
+											class=SpellE>petname</span>&quot;, &quot;<span class=SpellE>avg_price</span>&quot;:{&quot;$avg&quot;:&quot;$price&quot;}}},</p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt;line-height:normal;
+											border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><span
+											style='mso-spacerun:yes'>   </span>{&quot;$sort<span class=GramE>&quot;:{</span>&quot;<span
+											class=SpellE>avg_price</span>&quot;:-1}}])</p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'><b
+											style='mso-bidi-font-weight:normal'>Query <span class=GramE>3:Which</span> are
+											the top 3 service providers<span style='mso-spacerun:yes'>  </span>based on
+											their avg rating?<o:p></o:p></b></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt;line-height:normal;
+											border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><span
+											class=SpellE><span class=GramE>db.hires</span>.aggregate</span>([{&quot;$group&quot;:{&quot;_id&quot;:&quot;$<span
+											class=SpellE>providerid</span>&quot;, &quot;<span class=SpellE>avg_rating</span>&quot;:{&quot;$avg&quot;:&quot;$rating&quot;}}},</p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt;line-height:normal;
+											border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><span
+											style='mso-spacerun:yes'>   </span>{&quot;$sort<span class=GramE>&quot;:{</span>&quot;<span
+											class=SpellE>avg_rating</span>&quot;:-1}},</p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt;line-height:normal;
+											border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><span
+											style='mso-spacerun:yes'> </span><span style='mso-spacerun:yes'> 
+											</span>{&quot;$limit&quot;:3}])</p>
+											
+											<p class=MsoNormal align=center style='margin-left:0in;text-align:center;
+											text-indent:-.1pt;line-height:normal;border:none;mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;
+											mso-border-shadow:yes'><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+											 id="image4.png" o:spid="_x0000_i1030" type="#_x0000_t75" style='width:142pt;
+											 height:40pt;visibility:visible;mso-wrap-style:square'>
+											 <v:imagedata src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image030.png" o:title=""/>
+											</v:shape><![endif]--><![if !vml]><img width=142 height=40
+											src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image031.jpg" v:shapes="image4.png"><![endif]></span></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'><i
+											style='mso-bidi-font-style:normal'>Note: MapReduce was not used as recent
+											versions of MongoDB deprecated it and therefore it was not able to be
+											implemented on this environment. </i></p>
+											
+											<p class=MsoNormal style='margin-left:.05pt;text-indent:-.15pt'><b
+											style='mso-bidi-font-weight:normal'><span style='font-size:14.0pt'>Neo4j<o:p></o:p></span></b></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'>We implemented on
+											the neo4j console a simple social network with 10 pet owners, where each can
+											“follow” other pet owners. Here is a query performed:<b style='mso-bidi-font-weight:
+											normal'><span style='font-size:14.0pt'><o:p></o:p></span></b></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'><b
+											style='mso-bidi-font-weight:normal'><span style='color:#222223'>How many people
+											are each pet owner following that at least follows one person?<span
+											style='mso-spacerun:yes'>   </span><o:p></o:p></span></b></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-indent:-.1pt'><span
+											style='color:#222223'>MATCH (<span class=SpellE><span class=GramE>me:Petowner</span></span>)--&gt;(<span
+											class=SpellE>friend:Petowner</span>) RETURN me.name, count(*) as <span
+											class=SpellE>number_friends</span> ORDER BY <span class=SpellE>number_friends</span>
+											DESC;<o:p></o:p></span></p>
+											
+											<p class=MsoNormal align=center style='margin-left:0in;text-align:center;
+											text-indent:-.1pt'><b style='mso-bidi-font-weight:normal'><span
+											style='color:red;mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="image18.png"
+											 o:spid="_x0000_i1029" type="#_x0000_t75" style='width:211pt;height:77pt;
+											 visibility:visible;mso-wrap-style:square'>
+											 <v:imagedata src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image032.png" o:title=""/>
+											</v:shape><![endif]--><![if !vml]><img width=211 height=77
+											src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image033.jpg" v:shapes="image18.png"><![endif]></span><span
+											style='color:red'><o:p></o:p></span></b></p>
+											
+											<h1 style='margin-left:.05pt;text-indent:-.15pt'><span style='font-size:14.0pt;
+											font-family:"Times New Roman",serif'>V. Database Access via R or Python<o:p></o:p></span></h1>
+											
+											<p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:-.1pt'>The
+											database is accessed using <span class=GramE>Python,.</span> the <span
+											class=GramE>connection<span style='mso-spacerun:yes'>  </span>to</span><span
+											style='mso-spacerun:yes'>  </span>MySQL was<span style='mso-spacerun:yes'> 
+											</span>done<span style='mso-spacerun:yes'>  </span>using<span
+											style='mso-spacerun:yes'>  </span><span class=SpellE>mysql.connector</span>,
+											and the querying was converted to a <span class=SpellE>dataframe</span> by
+											using pandas <span class=SpellE>read_sql</span> function. Other libraries like
+											matplotlib and <span class=SpellE>plotly</span> were used for the analyses.<span
+											style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="image17.png" o:spid="_x0000_i1028"
+											 type="#_x0000_t75" style='width:120pt;height:120pt;visibility:visible;
+											 mso-wrap-style:square'>
+											 <v:imagedata src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image034.png" o:title=""/>
+											</v:shape><![endif]--><![if !vml]><img width=120 height=120
+											src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image035.jpg" v:shapes="image17.png"><![endif]><!--[if gte vml 1]><v:shape
+											 id="image5.png" o:spid="_x0000_i1027" type="#_x0000_t75" style='width:233pt;
+											 height:104pt;visibility:visible;mso-wrap-style:square'>
+											 <v:imagedata src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image036.png" o:title=""/>
+											</v:shape><![endif]--><![if !vml]><img width=233 height=104
+											src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image037.jpg" v:shapes="image5.png"><![endif]></span></p>
+											
+											<p class=MsoNormal align=center style='margin-left:0in;text-align:center;
+											text-indent:-.1pt'><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+											 id="image2.png" o:spid="_x0000_i1026" type="#_x0000_t75" style='width:164pt;
+											 height:110pt;visibility:visible;mso-wrap-style:square'>
+											 <v:imagedata src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image038.png" o:title=""/>
+											</v:shape><![endif]--><![if !vml]><img width=164 height=110
+											src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image039.jpg" v:shapes="image2.png"><![endif]><span
+											style='color:#222223'><!--[if gte vml 1]><v:shape id="image10.png" o:spid="_x0000_i1025"
+											 type="#_x0000_t75" style='width:165pt;height:103pt;visibility:visible;
+											 mso-wrap-style:square'>
+											 <v:imagedata src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image040.png" o:title=""
+											  cropbottom="8631f" cropleft="3186f" cropright="1745f"/>
+											</v:shape><![endif]--><![if !vml]><img width=165 height=103
+											src="CASE_STUDY_REPORT_GROUP_03%20(1).fld/image041.jpg" v:shapes="image10.png"><![endif]></span></span><span
+											style='color:#222223'><o:p></o:p></span></p>
+											
+											<h1 style='margin-left:.05pt;text-indent:-.15pt'><span style='font-size:14.0pt;
+											font-family:"Times New Roman",serif'>VII. Summary and recommendation </span></h1>
+											
+											<p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:-.1pt'>Throughout
+											this project, we developed an implementation-ready RDBMS for a pet services app
+											in MySQL with a proof of concept on MongoDB cloud and Neo4j at its console. The
+											motivation behind this work is to offer a centralized app for the emerging and
+											big market available for pet supplies and services in the US. This app will not
+											only benefit the pet <span class=GramE>owners, but</span> will also provide
+											better ways of finding employment to several people that like animals and would
+											like to pet sit, dog walk or provide other types of clever new services for
+											them. Another advantage of this is that it is designed in a data driven way
+											where informed decisions can be taken and provide relevant statistics to the
+											businesses. The smooth and easy way of connecting the database with python
+											makes this possible. We can create within seconds, plots that translate
+											important performance messages from data. Additionally, with NoSQL database
+											implementations, we can leverage its flexibility of content saved (e.g. in the
+											future we might want to save pictures and be able to analyze <span class=GramE>them)<span
+											style='mso-spacerun:yes'>  </span>and</span> easy manipulation of potential
+											social network strategies in the app.<span style='mso-spacerun:yes'>  </span></p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:-.1pt'>Some
+											of the improvements on this implementation are related to DevOps aspects of
+											databases, basically on how to make sure everything lives in an easy to improve
+											environment and that efficiently interacts with all the parts it has. First,
+											for a full MongoDB implementation, it still needs to define the best way of
+											grouping collections, as right now it is just a mirror of the normalized
+											version of the relational <span class=GramE>model</span> and this is likely not
+											the most efficient way. The advantage is that this was set already on cloud,
+											which will facilitate the future developments. Second, Neo4j was used in a
+											simple environment where there is only interaction between pet owners. However,
+											we can expand and have pets and service providers interacting, even a service
+											can be provided as a partnership from different providers and for a group of
+											dogs to utilize the <span class=GramE>many to many</span> advantage of graph
+											based databases. </p>
+											
+											<p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:-.1pt'>In
+											an era where everything has the potential to become Big Data, at some point we
+											may need to consider using Spark and even Databricks services in conjunction
+											with cloud storage to scale our current capacity and product. Finally, having a
+											clear data governance plan and emphasize data quality is another aspect where
+											future iterations should focus on, things like implementing constraints and
+											other features from MySQL can help make sure that integrity and cardinalities
+											of the design are correctly followed, for this some helpful features can be
+											adding triggers and stored procedures.</p>
+											
 											</div>
-											<div class="col-6 col-12-medium">
-												<h4>Ordered</h4>
-												<ol>
-													<li>Dolor pulvinar etiam.</li>
-													<li>Etiam vel felis viverra.</li>
-													<li>Felis enim feugiat.</li>
-													<li>Dolor pulvinar etiam.</li>
-													<li>Etiam vel felis lorem.</li>
-													<li>Felis enim et feugiat.</li>
-												</ol>
-												<h4>Icons</h4>
-												<ul class="icons">
-													<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-													<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-													<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-													<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-												</ul>
-											</div>
-										</div>
-										<h4>Actions</h4>
-										<div class="row">
-											<div class="col-6 col-12-medium">
-												<ul class="actions">
-													<li><a href="#" class="button primary">Default</a></li>
-													<li><a href="#" class="button">Default</a></li>
-												</ul>
-												<ul class="actions small">
-													<li><a href="#" class="button primary small">Small</a></li>
-													<li><a href="#" class="button small">Small</a></li>
-												</ul>
-												<ul class="actions stacked">
-													<li><a href="#" class="button primary">Default</a></li>
-													<li><a href="#" class="button">Default</a></li>
-												</ul>
-												<ul class="actions stacked small">
-													<li><a href="#" class="button primary small">Small</a></li>
-													<li><a href="#" class="button small">Small</a></li>
-												</ul>
-											</div>
-											<div class="col-6 col-12-medium">
-												<ul class="actions stacked">
-													<li><a href="#" class="button primary fit">Default</a></li>
-													<li><a href="#" class="button fit">Default</a></li>
-												</ul>
-												<ul class="actions stacked small">
-													<li><a href="#" class="button primary small fit">Small</a></li>
-													<li><a href="#" class="button small fit">Small</a></li>
-												</ul>
-											</div>
-										</div>
-										<h4>Pagination</h4>
-										<ul class="pagination">
-											<li><span class="button small disabled">Prev</span></li>
-											<li><a href="#" class="page active">1</a></li>
-											<li><a href="#" class="page">2</a></li>
-											<li><a href="#" class="page">3</a></li>
-											<li><span>&hellip;</span></li>
-											<li><a href="#" class="page">8</a></li>
-											<li><a href="#" class="page">9</a></li>
-											<li><a href="#" class="page">10</a></li>
-											<li><a href="#" class="button small">Next</a></li>
-										</ul>
-									</section>
 
-									<section>
-										<h3 class="major">Table</h3>
-										<h4>Default</h4>
-										<div class="table-wrapper">
-											<table>
-												<thead>
-													<tr>
-														<th>Name</th>
-														<th>Description</th>
-														<th>Price</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>Item One</td>
-														<td>Ante turpis integer aliquet porttitor.</td>
-														<td>29.99</td>
-													</tr>
-													<tr>
-														<td>Item Two</td>
-														<td>Vis ac commodo adipiscing arcu aliquet.</td>
-														<td>19.99</td>
-													</tr>
-													<tr>
-														<td>Item Three</td>
-														<td> Morbi faucibus arcu accumsan lorem.</td>
-														<td>29.99</td>
-													</tr>
-													<tr>
-														<td>Item Four</td>
-														<td>Vitae integer tempus condimentum.</td>
-														<td>19.99</td>
-													</tr>
-													<tr>
-														<td>Item Five</td>
-														<td>Ante turpis integer aliquet porttitor.</td>
-														<td>29.99</td>
-													</tr>
-												</tbody>
-												<tfoot>
-													<tr>
-														<td colspan="2"></td>
-														<td>100.00</td>
-													</tr>
-												</tfoot>
-											</table>
-										</div>
 
-										<h4>Alternate</h4>
-										<div class="table-wrapper">
-											<table class="alt">
-												<thead>
-													<tr>
-														<th>Name</th>
-														<th>Description</th>
-														<th>Price</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>Item One</td>
-														<td>Ante turpis integer aliquet porttitor.</td>
-														<td>29.99</td>
-													</tr>
-													<tr>
-														<td>Item Two</td>
-														<td>Vis ac commodo adipiscing arcu aliquet.</td>
-														<td>19.99</td>
-													</tr>
-													<tr>
-														<td>Item Three</td>
-														<td> Morbi faucibus arcu accumsan lorem.</td>
-														<td>29.99</td>
-													</tr>
-													<tr>
-														<td>Item Four</td>
-														<td>Vitae integer tempus condimentum.</td>
-														<td>19.99</td>
-													</tr>
-													<tr>
-														<td>Item Five</td>
-														<td>Ante turpis integer aliquet porttitor.</td>
-														<td>29.99</td>
-													</tr>
-												</tbody>
-												<tfoot>
-													<tr>
-														<td colspan="2"></td>
-														<td>100.00</td>
-													</tr>
-												</tfoot>
-											</table>
-										</div>
-									</section>
-
-									<section>
-										<h3 class="major">Buttons</h3>
-										<ul class="actions">
-											<li><a href="#" class="button primary">Primary</a></li>
-											<li><a href="#" class="button">Default</a></li>
-										</ul>
-										<ul class="actions">
-											<li><a href="#" class="button large">Large</a></li>
-											<li><a href="#" class="button small">Small</a></li>
-										</ul>
-										<ul class="actions fit">
-											<li><a href="#" class="button fit">Fit</a></li>
-											<li><a href="#" class="button primary fit">Fit</a></li>
-											<li><a href="#" class="button fit">Fit</a></li>
-										</ul>
-										<ul class="actions fit small">
-											<li><a href="#" class="button primary fit small">Fit + Small</a></li>
-											<li><a href="#" class="button fit small">Fit + Small</a></li>
-											<li><a href="#" class="button primary fit small">Fit + Small</a></li>
-										</ul>
-										<ul class="actions">
-											<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-											<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-										</ul>
-										<ul class="actions">
-											<li><span class="button primary disabled">Disabled</span></li>
-											<li><span class="button disabled">Disabled</span></li>
-										</ul>
-									</section>
-
-									<section>
-										<h3 class="major">Form</h3>
-										<form method="post" action="#">
-											<div class="row gtr-uniform">
-												<div class="col-6 col-12-xsmall">
-													<label for="demo-name">Name</label>
-													<input type="text" name="demo-name" id="demo-name" value="" />
-												</div>
-												<div class="col-6 col-12-xsmall">
-													<label for="demo-email">Email</label>
-													<input type="email" name="demo-email" id="demo-email" value="" />
-												</div>
-												<div class="col-12">
-													<label for="demo-category">Category</label>
-													<select name="demo-category" id="demo-category">
-														<option value="">-</option>
-														<option value="1">Manufacturing</option>
-														<option value="1">Shipping</option>
-														<option value="1">Administration</option>
-														<option value="1">Human Resources</option>
-													</select>
-												</div>
-												<div class="col-4 col-12-small">
-													<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-													<label for="demo-priority-low">Low Priority</label>
-												</div>
-												<div class="col-4 col-12-small">
-													<input type="radio" id="demo-priority-normal" name="demo-priority">
-													<label for="demo-priority-normal">Normal Priority</label>
-												</div>
-												<div class="col-4 col-12-small">
-													<input type="radio" id="demo-priority-high" name="demo-priority">
-													<label for="demo-priority-high">High Priority</label>
-												</div>
-												<div class="col-6 col-12-small">
-													<input type="checkbox" id="demo-copy" name="demo-copy">
-													<label for="demo-copy">Email me a copy</label>
-												</div>
-												<div class="col-6 col-12-small">
-													<input type="checkbox" id="demo-human" name="demo-human" checked>
-													<label for="demo-human">Not a robot</label>
-												</div>
-												<div class="col-12">
-													<label for="demo-message">Message</label>
-													<textarea name="demo-message" id="demo-message" rows="6"></textarea>
-												</div>
-												<div class="col-12">
-													<ul class="actions">
-														<li><input type="submit" value="Send Message" class="primary" /></li>
-														<li><input type="reset" value="Reset" /></li>
-													</ul>
-												</div>
-											</div>
-										</form>
-									</section>
-
-									<section>
-										<h3 class="major">Image</h3>
-										<h4>Fit</h4>
-										<div class="box alt">
-											<div class="row gtr-uniform">
-												<div class="col-12"><span class="image fit"><img src="images/pic08.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic05.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic06.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic07.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic07.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic05.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic06.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic06.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic07.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic05.jpg" alt="" /></span></div>
-											</div>
-										</div>
-										<h4>Left &amp; Right</h4>
-										<p><span class="image left"><img src="images/pic01.jpg" alt="" /></span>Morbi mattis mi consectetur tortor elementum, varius pellentesque velit convallis. Aenean tincidunt lectus auctor mauris maximus, ac scelerisque ipsum tempor. Duis vulputate ex et ex tincidunt, quis lacinia velit aliquet. Duis non efficitur nisi, id malesuada justo. Maecenas sagittis felis ac sagittis semper. Curabitur purus leo, tempus sed finibus eget, fringilla quis risus. Maecenas et lorem quis sem varius sagittis et a est. Maecenas iaculis iaculis sem. Donec vel dolor at arcu tincidunt bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce ut aliquet justo. Donec id neque ipsum. Integer eget ultricies odio. Nam vel ex a orci fringilla tincidunt. Aliquam eleifend ligula non velit accumsan cursus. Etiam ut gravida sapien. Morbi mattis mi consectetur tortor elementum, varius pellentesque velit convallis. Aenean tincidunt lectus auctor mauris maximus, ac scelerisque ipsum tempor. Duis vulputate ex et ex tincidunt, quis lacinia velit aliquet. Duis non efficitur nisi, id malesuada justo. Maecenas sagittis felis ac sagittis semper. Curabitur purus leo, tempus sed finibus eget, fringilla quis risus. Maecenas et lorem quis sem varius sagittis et a est. Maecenas iaculis iaculis sem. Donec vel dolor at arcu tincidunt bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce ut aliquet justo. Donec id neque ipsum. Integer eget ultricies odio. Nam vel ex a orci fringilla tincidunt. Aliquam eleifend ligula non velit accumsan cursus. Etiam ut gravida sapien.</p>
-										<p><span class="image right"><img src="images/pic02.jpg" alt="" /></span>Vestibulum ultrices risus velit, sit amet blandit massa auctor sit amet. Sed eu lectus sem. Phasellus in odio at ipsum porttitor mollis id vel diam. Praesent sit amet posuere risus, eu faucibus lectus. Vivamus ex ligula, tempus pulvinar ipsum in, auctor porta quam. Proin nec dui cursus, posuere dui eget interdum. Fusce lectus magna, sagittis at facilisis vitae, pellentesque at etiam. Quisque posuere leo quis sem commodo, vel scelerisque nisi scelerisque. Suspendisse id quam vel tortor tincidunt suscipit. Nullam auctor orci eu dolor consectetur, interdum ullamcorper ante tincidunt. Mauris felis nec felis elementum varius. Nam sapien ante, varius in pulvinar vitae, rhoncus id massa. Donec varius ex in mauris ornare, eget euismod urna egestas. Etiam lacinia tempor ipsum, sodales porttitor justo. Aliquam dolor quam, semper in tortor eu, volutpat efficitur quam. Fusce nec fermentum nisl. Aenean erat diam, tempus aliquet erat. Etiam iaculis nulla ipsum, et pharetra libero rhoncus ut. Phasellus rutrum cursus velit, eget condimentum nunc blandit vel. In at pulvinar lectus. Morbi diam ante, vulputate et imperdiet eget, fermentum non dolor. Ut eleifend sagittis tincidunt. Sed viverra commodo mi, ac rhoncus justo. Duis neque ligula, elementum ut enim vel, posuere finibus justo. Vivamus facilisis maximus nibh quis pulvinar. Quisque hendrerit in ipsum id tellus facilisis fermentum. Proin mauris dui.</p>
-									</section>
-
-								</div>
-							</div>
-
-					</section>
-
-				<!-- Footer -->
-					<section id="footer">
-						<div class="inner">
-							<h2 class="major">Get in touch</h2>
-							<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="email" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="4"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-							<ul class="contact">
-								<li class="icon solid fa-home">
-									Untitled Inc<br />
-									1234 Somewhere Road Suite #2894<br />
-									Nashville, TN 00000-0000
-								</li>
-								<li class="icon solid fa-phone">(000) 000-0000</li>
-								<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
-								<li class="icon brands fa-twitter"><a href="#">twitter.com/untitled-tld</a></li>
-								<li class="icon brands fa-facebook-f"><a href="#">facebook.com/untitled-tld</a></li>
-								<li class="icon brands fa-instagram"><a href="#">instagram.com/untitled-tld</a></li>
-							</ul>
-							<ul class="copyright">
-								<li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</section>
-
-			</div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
